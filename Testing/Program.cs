@@ -1,38 +1,26 @@
 ﻿using System.Collections.ObjectModel;
 using System.Text;
 
-var ideas = IdeaManipulator.ListAll();
+var ideas = IdeaManipulator.Ideas;
+
+IdeaManipulator.CreateNewByContent("1",'A');
+IdeaManipulator.CreateNewByContent("2",'B');
+IdeaManipulator.CreateNewByContent("3",'C');
+
+//IdeaManipulator.RemoveIdea(ideas.First());
+
+//IdeaManipulator.UpdateIdea(ideas.First(), "I'm alone now");
 
 foreach (var idea in ideas)
     Console.WriteLine(idea);
 
-IdeaManipulator.CreateNewByContent("I Gotta GOU");
-IdeaManipulator.CreateNewByContent("Nice");
-IdeaManipulator.CreateNewByContent("I'm my own best friend");
-
-IdeaManipulator.RemoveIdea(ideas.First());
-
-IdeaManipulator.UpdateIdea(ideas.First(), "I'm alone now");
-
-
 internal static class IoHelper
 {
-    private const string IdeasPath = @"C:\Users\Tei\Documents\test\";
+    private static readonly string IdeasPath;
      
-    public static string ReadContent(string path)  
-    {  
-        FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);  
-        StreamReader sr = new StreamReader(fs);
-        sr.BaseStream.Seek(0, SeekOrigin.Begin);  
-        string str = sr.ReadLine() ?? "";
-        
-        sr.Close();  
-        fs.Close();
-        
-        return str;
-    }
+    public static string ReadContent(string path) => File.ReadAllText(path);
 
-    public static string[] GetAllIdeaNames() => Directory
+    public static IEnumerable<string> GetAllIdeaNames() => Directory
         .GetFiles(IdeasPath)
         .Select(Path.GetFileName)
         .ToArray();
@@ -58,6 +46,18 @@ internal static class IoHelper
         var filepath = string.Concat(IdeasPath, fileName);
         File.Delete(filepath);
     }
+
+    private static void EnsureIdeaPathCreation()
+    {
+        if ( ! Directory.Exists(IdeasPath))
+            Directory.CreateDirectory(IdeasPath);
+    }
+
+    static IoHelper()
+    {
+        IdeasPath = $"{Path.GetTempPath()}ideas/";
+        EnsureIdeaPathCreation();
+    }
 }
 
 /// <summary>
@@ -68,16 +68,11 @@ internal static class IoHelper
 /// </summary>
 internal static class PosixTimeHelper
 {
-    private static DateTime InitialPosixTime => new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+    private static DateTime InitialPosixTime => new(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
     
     public static int Now => (int)DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
-    public static DateTime ToPosixToDateTime(this int posixTimeStamp)
-        => InitialPosixTime
-            .AddSeconds(posixTimeStamp)
-            .ToLocalTime();
-    
-    public static DateTime ToPosixToDateTime(this string posixTimeStamp)
+    public static DateTime ToDateTime(this string posixTimeStamp)
     {
         if (int.TryParse(posixTimeStamp, out int parsedTimeStamp))
             return InitialPosixTime
@@ -87,8 +82,13 @@ internal static class PosixTimeHelper
         throw new ArgumentException("Provided string is not a Unix Timestamp valid value.");
     }
     
-    public static string Salt (this int unixTimeStamp) 
-        => $"{unixTimeStamp}{DateTime.Now.ToUniversalTime().Millisecond}";
+    public static string Salt (this int unixTimeStamp)
+    {
+        return $"{unixTimeStamp}"
+                   .PadRight(10,'0') 
+               + $"{DateTime.Now.ToUniversalTime().Millisecond}"
+                   .PadRight(3,'0');
+    }
 }
 
 // TODO: create interface for public access.
@@ -136,7 +136,7 @@ public sealed class Idea
         FileName = filename;
         CategoryId = useful[0];
         Id = filename[1..14];
-        Created = useful[1..].ToPosixToDateTime();
+        Created = useful[1..].ToDateTime();
     }
 
     private string GetNewFileName() => $"{CategoryId}{PosixTimeHelper.Now.Salt()}.txt";
@@ -169,15 +169,10 @@ public static class IdeaManipulator
     
     public static void CreateNewByContent(string content, char category = '0')
     {
-        Idea.GenerateByContentAndCategory(content, category);
+        var result = Idea.GenerateByContentAndCategory(content, category);
+        Keeper.Add(result);
     }
-    
-    public static void AddIdea(Idea idea)
-    {
-        idea.GenerateFile();
-        Keeper.Add(idea);
-    }
-    
+
     public static void RemoveIdea(Idea idea)
     {
         idea.DestroyFile();
@@ -186,5 +181,5 @@ public static class IdeaManipulator
 
     public static void UpdateIdea(Idea idea, string content, char? category = null) => idea.Update(content, category);
 
-    public static ReadOnlyCollection<Idea> ListAll() => Keeper.AsReadOnly();
+    public static IReadOnlyCollection<Idea> Ideas => Keeper;
 }
