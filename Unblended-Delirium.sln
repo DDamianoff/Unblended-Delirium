@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unblended.Blazor", "Unblended.Blazor\Unblended.Blazor.csproj", "{8507811A-EC34-4829-B246-47DAD52A9B1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{8507811A-EC34-4829-B246-47DAD52A9B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8507811A-EC34-4829-B246-47DAD52A9B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8507811A-EC34-4829-B246-47DAD52A9B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
