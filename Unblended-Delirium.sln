@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unblended.Blazor", "Unblend
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unblended.Core", "Unblended.Core\Unblended.Core.csproj", "{BA58BDB1-1935-4AFF-A447-49C37A0A05CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA58BDB1-1935-4AFF-A447-49C37A0A05CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA58BDB1-1935-4AFF-A447-49C37A0A05CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA58BDB1-1935-4AFF-A447-49C37A0A05CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA58BDB1-1935-4AFF-A447-49C37A0A05CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
