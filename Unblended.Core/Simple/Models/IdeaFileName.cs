@@ -86,9 +86,9 @@ internal class IdeaFileName
     }
 }
 
-static class IdeaFileNameHelper
+internal static class IdeaFileNameHelper
 {
-    public static bool TryValidate(this object obj, out ICollection<ValidationResult> results)  
+    internal static bool TryValidate(this object obj, out ICollection<ValidationResult> results)  
     {  
         var context = new ValidationContext(obj, serviceProvider: null, items: null);  
         results = new List<ValidationResult>();  
