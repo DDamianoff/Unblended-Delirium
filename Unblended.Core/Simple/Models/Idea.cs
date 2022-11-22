@@ -1,9 +1,5 @@
 using Unblended.Core.Simple.Interfaces;
-using Unblended.Core.Simple.Models;
 using Unblended.Core.Simple.Utils;
-
-// ReSharper disable UnusedAutoPropertyAccessor.Local
-// ReSharper disable UnusedMember.Local
 
 namespace Unblended.Core.Simple.Models;
 
