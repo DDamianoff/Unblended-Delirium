@@ -1,19 +1,22 @@
 ﻿using System.Collections.ObjectModel;
 using System.Text;
+using System.Text.Json;
 
 var ideas = IdeaManipulator.Ideas;
 
-IdeaManipulator.CreateNewByContent("1",'A');
-IdeaManipulator.CreateNewByContent("2",'B');
-IdeaManipulator.CreateNewByContent("3",'C');
 
-//IdeaManipulator.RemoveIdea(ideas.First());
+using (var webClient = new HttpClient())
+{
+    foreach (var _ in Enumerable.Repeat(0,30))
+    {
+        var result = await webClient.GetAsync("https://whatthecommit.com/index.txt");
+        var message = await result.Content.ReadAsStringAsync();
+        
+        IdeaManipulator.CreateNewByContent(message, 'I');
+    }
+}
 
-//IdeaManipulator.UpdateIdea(ideas.First(), "I'm alone now");
-
-foreach (var idea in ideas)
-    Console.WriteLine(idea);
-
+Console.WriteLine(IdeaManipulator.ExportToJson());
 internal static class IoHelper
 {
     private static readonly string IdeasPath;
@@ -182,4 +185,14 @@ public static class IdeaManipulator
     public static void UpdateIdea(Idea idea, string content, char? category = null) => idea.Update(content, category);
 
     public static IReadOnlyCollection<Idea> Ideas => Keeper;
+
+    public static string ExportToJson()
+    {
+        var serialized = JsonSerializer.Serialize(Keeper, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
+        
+        return serialized;
+    }
 }
