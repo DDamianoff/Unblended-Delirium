@@ -11,7 +11,7 @@ internal class IdeaFileName
         $"{Identifier}" +
         $"{FileExtension}";
     
-    [RegularExpression(@"0|[A-Z]")]
+    [RegularExpression(@"0|Ñ|[A-Z]")]
     internal char CategoryId 
     { get; }
     
