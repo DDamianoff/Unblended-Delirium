@@ -1,9 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-using SerkPlus.Core.Shared.Utils;
-using SerkPlus.Core.Simple.Utils;
+using Serk.Core.Utils;
 
-
-namespace SerkPlus.Core.Simple.Models;
+namespace Serk.Core.Models;
 
 internal class IdeaFileName
 {

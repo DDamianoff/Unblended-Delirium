@@ -1,6 +1,6 @@
-using SerkPlus.Core.Simple.Utils;
+using Serk.Core.Utils;
 
-namespace SerkPlus.Core.Simple.Models;
+namespace Serk.Core.Models;
 
 internal readonly struct IdeaFile
 {

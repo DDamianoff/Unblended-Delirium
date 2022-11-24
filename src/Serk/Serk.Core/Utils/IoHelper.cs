@@ -1,7 +1,7 @@
 using System.Text;
-using SerkPlus.Core.Simple.Models;
+using Serk.Core.Models;
 
-namespace SerkPlus.Core.Simple.Utils;
+namespace Serk.Core.Utils;
 
 internal static class IoHelper
 {

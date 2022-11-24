@@ -1,4 +1,4 @@
-namespace SerkPlus.Core.Simple.Models;
+namespace Serk.Core.Models;
 
 public class Category
 {

@@ -1,4 +1,4 @@
-namespace SerkPlus.Core.Shared;
+namespace Serk.Core.Interfaces;
 
 public interface IIdea
 {

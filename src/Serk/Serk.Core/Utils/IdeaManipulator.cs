@@ -1,8 +1,7 @@
-using SerkPlus.Core.Shared;
-using SerkPlus.Core.Simple.Models;
-using SerkPlus.Core.Simple.Utils;
+using Serk.Core.Interfaces;
+using Serk.Core.Models;
 
-namespace SerkPlus.Core.Simple;
+namespace Serk.Core.Utils;
 
 public static class IdeaManipulator
 {

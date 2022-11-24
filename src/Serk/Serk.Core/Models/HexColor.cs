@@ -1,7 +1,8 @@
 using System.Drawing;
 using System.Text.RegularExpressions;
+using Serk.Core.Interfaces;
 
-namespace SerkPlus.Core.Shared;
+namespace Serk.Core.Models;
 
 public class HexColor : IColor
 {

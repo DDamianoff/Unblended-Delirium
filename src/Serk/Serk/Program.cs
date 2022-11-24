@@ -1,4 +1,4 @@
-﻿using SerkPlus.Core.Simple;
+﻿using Serk.Core.Utils;
 
 var ideas = IdeaManipulator.Ideas;
 

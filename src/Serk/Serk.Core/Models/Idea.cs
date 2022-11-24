@@ -1,8 +1,7 @@
-using SerkPlus.Core.Shared.Utils;
-using SerkPlus.Core.Shared;
+using Serk.Core.Interfaces;
+using Serk.Core.Utils;
 
-
-namespace SerkPlus.Core.Simple.Models;
+namespace Serk.Core.Models;
 
 public sealed class Idea : IIdea
 {

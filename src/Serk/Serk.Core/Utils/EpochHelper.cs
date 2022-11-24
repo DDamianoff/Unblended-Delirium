@@ -1,4 +1,4 @@
-namespace SerkPlus.Core.Shared.Utils;
+namespace Serk.Core.Utils;
 
 public static class EpochHelper
 {

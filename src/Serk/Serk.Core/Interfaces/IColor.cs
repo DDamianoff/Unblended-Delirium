@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace SerkPlus.Core.Shared;
+namespace Serk.Core.Interfaces;
 
 public interface IColor
 {
