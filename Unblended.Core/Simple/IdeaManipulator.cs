@@ -1,4 +1,4 @@
-using Unblended.Core.Simple.Interfaces;
+using Unblended.Core.Shared;
 using Unblended.Core.Simple.Models;
 using Unblended.Core.Simple.Utils;
 
@@ -15,7 +15,7 @@ public static class IdeaManipulator
 
         if (ideaFiles is not null)
             foreach (var ideaFile in ideaFiles)
-                IdeaList.Add(Idea.LoadFromFileName(ideaFile));
+                IdeaList.Add(Idea.LoadFromFileName((IdeaFileName)ideaFile));
     }
     
     public static IReadOnlyCollection<IIdea> Ideas => IdeaList;

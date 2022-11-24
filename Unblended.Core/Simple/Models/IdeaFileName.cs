@@ -76,7 +76,7 @@ internal class IdeaFileName
         throw new ArgumentException("Data provided to filename is invalid \n" + messages);
     }
     
-    public static implicit operator IdeaFileName(string stringFileName)
+    public static explicit operator IdeaFileName(string stringFileName)
     {
         return new IdeaFileName(
             categoryId: stringFileName[0],
@@ -84,6 +84,8 @@ internal class IdeaFileName
             utcTicksSalt: stringFileName[11..14],
             fileExtension: stringFileName[14..]);
     }
+    
+    public static implicit operator string(IdeaFileName file) => file.FileName;
 }
 
 internal static class IdeaFileNameHelper
