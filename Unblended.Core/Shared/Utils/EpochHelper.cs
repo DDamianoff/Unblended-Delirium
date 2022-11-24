@@ -1,4 +1,4 @@
-namespace Unblended.Core.Simple.Utils;
+namespace Unblended.Core.Shared.Utils;
 
 public static class EpochHelper
 {

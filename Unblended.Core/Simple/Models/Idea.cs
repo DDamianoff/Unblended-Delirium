@@ -1,5 +1,6 @@
-using Unblended.Core.Simple.Interfaces;
-using Unblended.Core.Simple.Utils;
+using Unblended.Core.Shared;
+using Unblended.Core.Shared.Utils;
+
 
 namespace Unblended.Core.Simple.Models;
 

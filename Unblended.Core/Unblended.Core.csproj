@@ -7,4 +7,8 @@
         <RootNamespace>Unblended.Core</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Server\Context" />
+    </ItemGroup>
+
 </Project>

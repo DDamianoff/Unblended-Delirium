@@ -1,4 +1,4 @@
-namespace Unblended.Core.Simple.Interfaces;
+namespace Unblended.Core.Shared;
 
 public interface IIdea
 {
