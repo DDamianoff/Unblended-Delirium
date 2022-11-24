@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unblended.Blazor", "Unblended.Blazor\Unblended.Blazor.csproj", "{8507811A-EC34-4829-B246-47DAD52A9B1D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serk", "Serk", "{46978C67-1EF5-4A69-932C-47885BE958EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SerkPlus", "SerkPlus", "{772150FA-4568-4EAF-9528-1B2B3FCBF56A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unblended.Core", "Unblended.Core\Unblended.Core.csproj", "{BA58BDB1-1935-4AFF-A447-49C37A0A05CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serk", "src\Serk\Serk\Serk.csproj", "{D3417749-1432-4D57-95DB-7E252DF11BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerkPlus.Blazor", "src\SerkPlus\SerkPlus.Blazor\SerkPlus.Blazor.csproj", "{EEECBC4F-5614-4441-A62C-7778F7D60AA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serk.Core", "src\Serk\Serk.Core\Serk.Core.csproj", "{ACE1C82A-868F-4164-B9AC-AEC08EBAC681}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,17 +22,22 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8507811A-EC34-4829-B246-47DAD52A9B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8507811A-EC34-4829-B246-47DAD52A9B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8507811A-EC34-4829-B246-47DAD52A9B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8507811A-EC34-4829-B246-47DAD52A9B1D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4047E2B-D148-4B6A-A703-9E6B7C57BD3B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA58BDB1-1935-4AFF-A447-49C37A0A05CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA58BDB1-1935-4AFF-A447-49C37A0A05CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA58BDB1-1935-4AFF-A447-49C37A0A05CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA58BDB1-1935-4AFF-A447-49C37A0A05CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3417749-1432-4D57-95DB-7E252DF11BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3417749-1432-4D57-95DB-7E252DF11BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3417749-1432-4D57-95DB-7E252DF11BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3417749-1432-4D57-95DB-7E252DF11BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEECBC4F-5614-4441-A62C-7778F7D60AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEECBC4F-5614-4441-A62C-7778F7D60AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEECBC4F-5614-4441-A62C-7778F7D60AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEECBC4F-5614-4441-A62C-7778F7D60AA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACE1C82A-868F-4164-B9AC-AEC08EBAC681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE1C82A-868F-4164-B9AC-AEC08EBAC681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE1C82A-868F-4164-B9AC-AEC08EBAC681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE1C82A-868F-4164-B9AC-AEC08EBAC681}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3417749-1432-4D57-95DB-7E252DF11BA3} = {46978C67-1EF5-4A69-932C-47885BE958EC}
+		{EEECBC4F-5614-4441-A62C-7778F7D60AA9} = {772150FA-4568-4EAF-9528-1B2B3FCBF56A}
+		{ACE1C82A-868F-4164-B9AC-AEC08EBAC681} = {46978C67-1EF5-4A69-932C-47885BE958EC}
 	EndGlobalSection
 EndGlobal
